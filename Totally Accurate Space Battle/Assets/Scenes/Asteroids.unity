@@ -155,7 +155,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myScript: {fileID: 101184298}
   sideCount: 16
-  scarsity: 5
+  scarsity: 36.67
+  r: 22.22
 --- !u!4 &101184297
 Transform:
   m_ObjectHideFlags: 0
