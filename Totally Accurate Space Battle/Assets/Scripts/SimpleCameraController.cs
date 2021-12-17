@@ -242,6 +242,7 @@ namespace UnityTemplateProjects
             var delta = lookAction.ReadValue<Vector2>();
             delta *= 0.5f; // Account for scaling applied directly in Windows code by old input system.
             delta *= 0.1f; // Account for sensitivity setting on old Mouse X and Y axes.
+            delta[1] *= -1f;
             return delta;
 #else
             return new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));

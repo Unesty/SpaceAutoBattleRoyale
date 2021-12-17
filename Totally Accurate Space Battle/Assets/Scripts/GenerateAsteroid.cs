@@ -14,11 +14,12 @@ public class GenerateAsteroid : MonoBehaviour
     MeshFilter planetMeshFilter;
     MeshCollider planetMeshCollider;
 
-    public void CreatePlanet()
+    public void CreateAsteroid(Vector3 pos)
     {
         CreatePlanetGameObject();
         //do whatever else you need to do with the sphere mesh
         RecalculateMesh();
+        planet.transform.position = pos;
     }
 
     void CreatePlanetGameObject()

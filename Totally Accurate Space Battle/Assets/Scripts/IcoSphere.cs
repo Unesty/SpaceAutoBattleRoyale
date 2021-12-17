@@ -63,28 +63,33 @@ public static class IcoSphere
         Dictionary<long, int> middlePointIndexCache = new Dictionary<long, int>();
         int index = 0;
 
-        int recursionLevel = 3;
-        float radius = 1f;
+        int recursionLevel = 1;
+        float radius = Random.Range(0f,10f);
 
         // create 12 vertices of a icosahedron
         float t = (1f + Mathf.Sqrt(5f)) / 2f;
 
-        float seed = Random.Range(0.0f,1.0f);
+//         float seed = Random.Range(0.0f,1.0f);
+//
+//         float[] vals = new float[12];
+//         for(int i=0;i<12;++i) {
+//             vals[i] =
+//         }
 
-        vertList.Add(new Vector3(-1f, t, 0f).normalized * radius);
-        vertList.Add(new Vector3(1f, t, 0f).normalized * radius);
-        vertList.Add(new Vector3(-1f, -t, 0f).normalized * radius);
-        vertList.Add(new Vector3(1f, -t, 0f).normalized * radius);
+        vertList.Add((new Vector3(-1f, t, 0f).normalized + RndV3()) * radius);
+        vertList.Add((new Vector3(1f, t, 0f).normalized + RndV3()) * radius);
+        vertList.Add((new Vector3(-1f, -t, 0f).normalized + RndV3()) * radius);
+        vertList.Add((new Vector3(1f, -t, 0f).normalized + RndV3()) * radius);
 
-        vertList.Add(new Vector3(0f, -1f, t).normalized * radius);
-        vertList.Add(new Vector3(0f, 1f, t).normalized * radius);
-        vertList.Add(new Vector3(0f, -1f, -t).normalized * radius);
-        vertList.Add(new Vector3(0f, 1f, -t).normalized * radius);
+        vertList.Add((new Vector3(0f, -1f, t).normalized + RndV3()) * radius);
+        vertList.Add((new Vector3(0f, 1f, t).normalized + RndV3()) * radius);
+        vertList.Add((new Vector3(0f, -1f, -t).normalized + RndV3()) * radius);
+        vertList.Add((new Vector3(0f, 1f, -t).normalized + RndV3()) * radius);
 
-        vertList.Add(new Vector3(t, 0f, -1f).normalized * radius);
-        vertList.Add(new Vector3(t, 0f, 1f).normalized * radius);
-        vertList.Add(new Vector3(-t, 0f, -1f).normalized * radius);
-        vertList.Add(new Vector3(-t, 0f, 1f).normalized * radius);
+        vertList.Add((new Vector3(t, 0f, -1f).normalized + RndV3()) * radius);
+        vertList.Add((new Vector3(t, 0f, 1f).normalized + RndV3()) * radius);
+        vertList.Add((new Vector3(-t, 0f, -1f).normalized + RndV3()) * radius);
+        vertList.Add((new Vector3(-t, 0f, 1f).normalized + RndV3()) * radius);
 
 
         // create 20 triangles of the icosahedron
@@ -161,5 +166,8 @@ public static class IcoSphere
         mesh.RecalculateTangents();
         mesh.RecalculateNormals();
         //mesh.Optimize();
+    }
+    static Vector3 RndV3() {
+        return new Vector3(Random.Range(-0.5f,0.5f), Random.Range(-0.5f,0.5f), Random.Range(-0.5f,.5f));
     }
 }
