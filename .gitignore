@@ -4,32 +4,32 @@
 
 # OS Generated
 # ============
-.DS_Store
-._*
-.Spotlight-V100
-.Trashes
-Icon?
-ehthumbs.db
-[Tt]humbs.db
-[Dd]esktop.ini
+Totally Accurate Space Battle/.DS_Store
+Totally Accurate Space Battle/._*
+Totally Accurate Space Battle/.Spotlight-V100
+Totally Accurate Space Battle/.Trashes
+Totally Accurate Space Battle/Icon?
+Totally Accurate Space Battle/ehthumbs.db
+Totally Accurate Space Battle/[Tt]humbs.db
+Totally Accurate Space Battle/[Dd]esktop.ini
 
 # Visual Studio / MonoDevelop generated
 # =====================================
-[Ee]xported[Oo]bj/
-*.userprefs
-*.csproj
-*.pidb
-*.suo
-*.sln
-*.user
-*.unityproj
-*.booproj
+Totally Accurate Space Battle/[Ee]xported[Oo]bj/
+Totally Accurate Space Battle/*.userprefs
+Totally Accurate Space Battle/*.csproj
+Totally Accurate Space Battle/*.pidb
+Totally Accurate Space Battle/*.suo
+Totally Accurate Space Battle/*.sln
+Totally Accurate Space Battle/*.user
+Totally Accurate Space Battle/*.unityproj
+Totally Accurate Space Battle/*.booproj
 
 # Unity generated
 # ===============
-[Oo]bj/
-[Bb]uild
-sysinfo.txt
-*.stackdump
-Library
-Temp
+Totally Accurate Space Battle/[Oo]bj/
+Totally Accurate Space Battle/[Bb]uild
+Totally Accurate Space Battle/sysinfo.txt
+Totally Accurate Space Battle/*.stackdump
+Totally Accurate Space Battle/Library
+Totally Accurate Space Battle/Temp

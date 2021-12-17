@@ -69,7 +69,7 @@ public static class IcoSphere
         // create 12 vertices of a icosahedron
         float t = (1f + Mathf.Sqrt(5f)) / 2f;
 
-        float seed = Random.Range(0.0,1.0);
+        float seed = Random.Range(0.0f,1.0f);
 
         vertList.Add(new Vector3(-1f, t, 0f).normalized * radius);
         vertList.Add(new Vector3(1f, t, 0f).normalized * radius);
