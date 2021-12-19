@@ -12,6 +12,21 @@ public class PlaceParts : MonoBehaviour
     public Camera cam;
     public bool moving = false;
 
+    // defining the main parts for the star ship
+    public enum StarShipComponentTypes {
+        Computer,
+        Fuel_Tank,
+        Laser,
+        Fuel_Engine,
+        Electric_Motor,
+        Camera,
+        Gun,
+        Accumulator,
+        Drill,
+        Plasma_Torch,
+        Solar_Panel
+    }
+
     // Start is called before the first frame update
     void Start()
     {

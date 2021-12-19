@@ -69,7 +69,6 @@ namespace Assets.Scripts {
 
         private void LateUpdate() {
             playerCamera.transform.localEulerAngles = new Vector3(mY, 0f, 0f);
-
         }
 
         private void Update()

@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.unity.collab-proxy": "1.15.7",
     "com.unity.inputsystem": "1.2.0",
     "com.unity.mathematics": "1.2.5",
     "com.unity.render-pipelines.universal": "10.8.0",
