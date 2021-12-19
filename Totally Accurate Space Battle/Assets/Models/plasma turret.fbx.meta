@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 97c57e2e9eb5fc02e99e67f979900d03
+guid: 28d49b9d77b46fcb1a070b5658d1fcd0
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
@@ -705,12 +705,7 @@ ModelImporter:
   - first:
       74: 8522909038893814904
     second: Cylinder253|Shape004|Take 001|BaseLayer
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: eba24c64d564d21cfa313f19fd676707, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

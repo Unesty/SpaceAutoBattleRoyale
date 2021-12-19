@@ -13,13 +13,15 @@ public class GenerateAsteroid : MonoBehaviour
     MeshRenderer planetMeshRenderer;
     MeshFilter planetMeshFilter;
     MeshCollider planetMeshCollider;
+    Rigidbody planetRigidbody;
 
-    public void CreateAsteroid(Vector3 pos)
+    public GameObject CreateAsteroid(Vector3 pos)
     {
         CreatePlanetGameObject();
         //do whatever else you need to do with the sphere mesh
         RecalculateMesh();
         planet.transform.position = pos;
+        return planet;
     }
 
     void CreatePlanetGameObject()
@@ -28,6 +30,9 @@ public class GenerateAsteroid : MonoBehaviour
         planetMeshFilter = planet.AddComponent<MeshFilter>();
         planetMesh = planetMeshFilter.mesh;
         planetMeshRenderer = planet.AddComponent<MeshRenderer>();
+        planetMeshCollider = planet.AddComponent<MeshCollider>();
+        planetMeshCollider.convex = true;
+//         planetRigidbody = planet.AddComponent<Rigidbody>();
         //need to set the material up top
         planetMeshRenderer.material = planetMaterial;
         planet.transform.localScale = new Vector3(planetSize, planetSize, planetSize);
