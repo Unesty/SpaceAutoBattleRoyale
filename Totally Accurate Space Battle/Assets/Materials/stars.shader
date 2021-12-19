@@ -100,7 +100,7 @@ Shader "Converted/Template"
             {
                 vertex_output = __vertex_output;
                 float4 fragColor = 0;
-                float2 fragCoord = vertex_output.uv * _Resolution;
+                float2 fragCoord = vertex_output.uv * _Resolution + float2(1000, 1000);
                 float3 vColor = float3(0.0,0.0,0.0);//float3(0.1, 0.2, 0.4)*fragCoord.y/iResolution.y;
                 float StarFieldThreshhold = 0.995;
                 float xRate = 0.2;
