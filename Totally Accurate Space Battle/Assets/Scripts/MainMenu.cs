@@ -9,6 +9,9 @@ public class MainMenu : MonoBehaviour
     public void LoadConstructor() {
         SceneManager.LoadScene("Constructor");
     }
+    public void LoadAsteroids() {
+        SceneManager.LoadScene("Asteroids");
+    }
 
     public int width = 1920;
     public int height = 1080;

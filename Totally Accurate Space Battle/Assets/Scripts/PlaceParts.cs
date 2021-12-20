@@ -11,6 +11,7 @@ public class PlaceParts : MonoBehaviour
     Vector2 mousepos;
     public Camera cam;
     public bool moving = false;
+    [SerializeField] bool SnapGrid = false;
 
     // Start is called before the first frame update
     void Start()
@@ -63,7 +64,11 @@ public class PlaceParts : MonoBehaviour
                 was_hit = Physics.Raycast(ray, out hit, 100f);
 
                 if(was_hit) {
-                    currentItem.transform.position = hit.point+hit.normal;
+                    if(SnapGrid) {
+//                         currentItem.transform.position = Mathf.Round(hit.point[0]+hit.normal[0]);
+                    } else {
+                        currentItem.transform.position = hit.point+hit.normal;
+                    }
                 }
             }
         }
