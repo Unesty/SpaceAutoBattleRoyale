@@ -76,7 +76,7 @@ public class PlaceParts : MonoBehaviour
     public void MiddleClickCB(InputAction.CallbackContext ctx)
     {
         if(ctx.performed) {
-
+            //pick an item
         }
     }
     public void RightClickCB(InputAction.CallbackContext ctx)

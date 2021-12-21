@@ -27,12 +27,14 @@ public class GenerateAsteroid : MonoBehaviour
     void CreatePlanetGameObject()
     {
         planet = new GameObject();
+        planet.transform.name = "Asteroid";
         planetMeshFilter = planet.AddComponent<MeshFilter>();
         planetMesh = planetMeshFilter.mesh;
         planetMeshRenderer = planet.AddComponent<MeshRenderer>();
         planetMeshCollider = planet.AddComponent<MeshCollider>();
         planetMeshCollider.convex = true;
-//         planetRigidbody = planet.AddComponent<Rigidbody>();
+        planetRigidbody = planet.AddComponent<Rigidbody>();
+        planetRigidbody.mass = 1000;//maybe calculate volume for more realism
         //need to set the material up top
         planetMeshRenderer.material = planetMaterial;
         planet.transform.localScale = new Vector3(planetSize, planetSize, planetSize);

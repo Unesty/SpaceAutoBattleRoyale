@@ -8,4 +8,7 @@ public class ConstructorMenu : MonoBehaviour
     public void LoadMainMenu() {
         SceneManager.LoadScene("MainMenu");
     }
+    public void LoadScene(string scene) {
+        SceneManager.LoadScene(scene);
+    }
 }
