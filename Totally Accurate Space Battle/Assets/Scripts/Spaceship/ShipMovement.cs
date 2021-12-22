@@ -12,12 +12,18 @@ public class ShipMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    [SerializeField] int moveSpeed;
-    [SerializeField, Range(0, 1)] float moveLerp;
-    [SerializeField] int rotateSpeed;
-    [SerializeField, Range(0, 1)] float rotateLerp;
+    [SerializeField] float moveSpeed;
+    [SerializeField] float moveForce;
+    [SerializeField] float rotateSpeed;
+    [SerializeField] float rotateForce;
     void FixedUpdate() {
-        rb.velocity = Vector3.Lerp(rb.velocity, transform.TransformDirection(moveSpeed * inputs.move), moveLerp);
-        rb.angularVelocity = Vector3.Lerp(rb.angularVelocity, transform.TransformDirection(rotateSpeed * inputs.rotate), rotateLerp);
+        // yuck
+        if (rb.velocity.magnitude < moveSpeed) {
+            rb.AddForce(transform.TransformDirection(moveForce * inputs.move));
+        }
+        if (rb.angularVelocity.magnitude < rotateSpeed) {
+            rb.AddTorque(transform.TransformDirection(rotateForce * inputs.rotate));
+        }
+        //rb.angularVelocity = Vector3.Lerp(rb.angularVelocity, transform.TransformDirection(rotateSpeed * inputs.rotate), rotateLerp);
     }
 }
