@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TestCustomProperties : MonoBehaviour
 {
+    public string PathToModel;
     // Start is called before the first frame update
     void Start()
     {
