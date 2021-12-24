@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class ButtonBehaviours : MonoBehaviour
 {
+    StarShipDataManager shipData;
+
+    public void Awake() {
+        shipData = new StarShipDataManager();
+    }
+
     public void SaveModel()
     {
         Debug.Log("Save Button clicked");
-        StarShipDataManager shipData = new StarShipDataManager();
-        shipData.ReadFile();
-        shipData.WriteFile();
+        //StarShipDataManager shipData = new StarShipDataManager();
+        shipData.SaveFile();
     }
 
     public void LoadModel() {
         Debug.Log("Load Button clicked");
-        StarShipDataManager shipData = new StarShipDataManager();
+        //StarShipDataManager shipData = new StarShipDataManager();
         shipData.LoadFile();
     }
 

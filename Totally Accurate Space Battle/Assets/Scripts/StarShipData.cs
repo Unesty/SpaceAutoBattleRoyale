@@ -4,29 +4,33 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class StarShipData : MonoBehaviour
+public class StarShipData
 {
     /* the object we want to save is the star ship model
     *  and the list of parts added on the star ship
     */
-    public GameObject StarShip;
+    //public GameObject StarShipObj;
+    public GameObject StarShipObj;
     public Vector3 pos;
-    public GameObject[] StarShipParts;
+    public string tagName;
+    public string prefabName;
+
     //List<GameObject> StarShipParts;
 
     // GetStarShip is called when the player clicks Save Model
-    public void GetStarShipObject()
+    public StarShipData(GameObject StarShip)
     {
-
-        StarShip = GameObject.FindWithTag("PlayerStarShip");
+        StarShipObj = StarShip;
         //StarShip.ToString();
-        if (StarShip == null) {
+        if (StarShipObj == null) {
             Debug.Log("Star Ship game object is null.");
         }
 
-        pos.x = StarShip.transform.localPosition.x;
-        pos.y = StarShip.transform.localPosition.y;
-        pos.z = StarShip.transform.localPosition.z;
+        tagName = StarShipObj.tag;
+        prefabName = tagName;
+        pos.x = StarShipObj.transform.localPosition.x;
+        pos.y = StarShipObj.transform.localPosition.y;
+        pos.z = StarShipObj.transform.localPosition.z;
 
         /*StarShipParts = StarShip.GetComponentsInChildren<GameObject>();
         for (int i = 0; i < StarShipParts.Length; i++)
