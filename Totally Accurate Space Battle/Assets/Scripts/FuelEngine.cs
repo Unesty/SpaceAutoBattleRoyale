@@ -6,6 +6,7 @@ public class FuelEngine : MonoBehaviour
 {
     Rigidbody rb;
     public bool on = true;
+    [SerializeField] float power = 1000f;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +17,7 @@ public class FuelEngine : MonoBehaviour
     void FixedUpdate()
     {
         if(on)
-       rb.AddForce(0f,-100f,0f);
+            rb.AddForce(0f,-power,0f);
     }
     public void Switch()
     {

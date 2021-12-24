@@ -28,7 +28,7 @@ public class BorderEnforcer : MonoBehaviour
             force.y = pushForce;
         pos.y = 0; // this allows for pos.magnitude = disk radius
         if (pos.magnitude > radius)
-            force -= pushForce * pos.normalized;
+            force -= pushForce * pos.normalized * rb.mass;
         
         rb.AddForce(force);
     }

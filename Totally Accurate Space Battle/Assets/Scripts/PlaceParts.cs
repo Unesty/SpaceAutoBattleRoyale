@@ -16,6 +16,8 @@ public class PlaceParts : MonoBehaviour
     [SerializeField] GameObject Axes;
     [SerializeField] GameObject[] Axis = new GameObject[3];
     [SerializeField] bool[] SelectedAxis = new bool[3];
+    Vector3 SavedPosition;
+    Vector2 SavedMousepos;
 
     // Start is called before the first frame update
     void Start()
@@ -30,17 +32,24 @@ public class PlaceParts : MonoBehaviour
     {
         if(SelectedAxis[0]) {
 //             Vector3 point = cam.ScreenToWorldPoint(new Vector3(mousepos[0], mousepos[1], currentItem.transform.position[2]));
-            Vector3 point = new Vector3(currentItem.transform.position[0]+mousepos[0],0,0);
-            currentItem.transform.position = new Vector3(point[0], currentItem.transform.position[1], currentItem.transform.position[2]);
-        } else if(SelectedAxis[1]) {
+//             Vector3 point = new Vector3(currentItem.transform.position[0]+mousepos[0],0,0);
+            float _Depth = Vector3.Distance(currentItem.transform.position, cam.transform.position);
+            Vector3 point = cam.ScreenToWorldPoint(new Vector3(mousepos[0], mousepos[1], _Depth));
+            currentItem.transform.position = new Vector3(SavedPosition[0] + point[0], currentItem.transform.position[1], currentItem.transform.position[2]);
+        }
+        if(SelectedAxis[1]) {
 //             Vector3 point = cam.ScreenToWorldPoint(new Vector3(mousepos[0], mousepos[1], currentItem.transform.position[0]));
-            Vector3 point = new Vector3(0,currentItem.transform.position[1]+mousepos[1],0);
-            currentItem.transform.position = new Vector3(currentItem.transform.position[0], point[1],  currentItem.transform.position[2]);
-        } else if(SelectedAxis[2]) {
+//             Vector3 point = new Vector3(0,currentItem.transform.position[1]+mousepos[1],0);
+            float _Depth = Vector3.Distance(currentItem.transform.position, cam.transform.position);
+            Vector3 point = cam.ScreenToWorldPoint(new Vector3(mousepos[0], mousepos[1], _Depth));
+            currentItem.transform.position = new Vector3(currentItem.transform.position[0], SavedPosition[1] + point[1],  currentItem.transform.position[2]);
+        }
+        if(SelectedAxis[2]) {
 //             Vector3 point = cam.ScreenToWorldPoint(new Vector3(mousepos[0], mousepos[1], currentItem.transform.position[1]));
-            Vector3 point = new Vector3(0, 0, currentItem.transform.position[2]+mousepos[0]);
-            currentItem.transform.position = new Vector3(currentItem.transform.position[1], currentItem.transform.position[2], point[2]);
-
+//             Vector3 point = new Vector3(0, 0, currentItem.transform.position[2]+mousepos[0]);
+            float _Depth = Vector3.Distance(currentItem.transform.position, cam.transform.position);
+            Vector3 point = cam.ScreenToWorldPoint(new Vector3(mousepos[0], mousepos[1], _Depth));
+            currentItem.transform.position = new Vector3(currentItem.transform.position[1], currentItem.transform.position[2], SavedPosition[2] + point[2]);
         }
     }
     RaycastHit hit;
@@ -68,8 +77,10 @@ public class PlaceParts : MonoBehaviour
             moving = ctx.ReadValue<float>() == 1f;
 
             if(!moving & was_hit) {
+                Axes.transform.SetParent(null);
                 var iGO = Instantiate(currentItem, currentItem.transform.position, currentItem.transform.rotation);
                 iGO.layer = LayerMask.NameToLayer ("Default");
+                Axes.transform.SetParent(currentItem.transform);
             }
         }
     }
@@ -87,13 +98,28 @@ public class PlaceParts : MonoBehaviour
                         SelectedAxis[0] = true;
 //                         Vector3 point = cam.ScreenToWorldPoint(new Vector3(mousepos[0], mousepos[1], currentItem.transform.position[2]));
 //                         currentItem.transform.position = new Vector3(point[0], currentItem.transform.position[1], currentItem.transform.position[2]);
+                        SelectedAxis[1] = false;
+                        SelectedAxis[2] = false;
+                        SavedPosition = currentItem.transform.position;
+                        SavedMousepos = mousepos;
                     } else
                     if(hit.transform.gameObject == Axis[1]) {
+                        SelectedAxis[0] = false;
                         SelectedAxis[1] = true;
+                        SelectedAxis[2] = false;
+                        SavedPosition = currentItem.transform.position;
+                        SavedMousepos = mousepos;
                     } else
                     if(hit.transform.gameObject == Axis[2]) {
+                        SelectedAxis[0] = false;
+                        SelectedAxis[1] = false;
                         SelectedAxis[2] = true;
+                        SavedPosition = currentItem.transform.position;
+                        SavedMousepos = mousepos;
                     } else if(SnapGrid) {
+                        SelectedAxis[0] = false;
+                        SelectedAxis[1] = false;
+                        SelectedAxis[2] = false;
                         currentItem.transform.position = (new Vector3(Mathf.Round((hit.point[0]+hit.normal[0])/cellSize[0])*cellSize[0], Mathf.Round(hit.point[1]+hit.normal[1]/cellSize[1])*cellSize[1], Mathf.Round(hit.point[2]+hit.normal[2]/cellSize[2])*cellSize[2]));
                     } else {
                         currentItem.transform.position = hit.point+hit.normal;
@@ -130,6 +156,7 @@ public class PlaceParts : MonoBehaviour
                     currentID = items.Count - 1;
                 } else {
                     currentID += val;
+                    Axes.transform.SetParent(null);
                     var iGO = Instantiate(items[currentID], currentItem.transform.position, Quaternion.identity);
                     Destroy(currentItem);
                     currentItem = iGO;
@@ -140,6 +167,7 @@ public class PlaceParts : MonoBehaviour
                     currentID = 0;
                 } else {
                     currentID += val;
+                    Axes.transform.SetParent(null);
                     var iGO = Instantiate(items[currentID], currentItem.transform.position, Quaternion.identity);
                     Destroy(currentItem);
                     currentItem = iGO;
