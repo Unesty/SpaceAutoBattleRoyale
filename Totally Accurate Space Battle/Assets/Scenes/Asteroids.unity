@@ -218,8 +218,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4432331783b661ceabea52ef3ab0b7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  memory: 0101020100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  rmthis: {fileID: 353257294}
+  Memory: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Connections:
+  - {fileID: 353257294}
+  - {fileID: 689211920}
+  - {fileID: 1125007396}
+  - {fileID: 1276496649}
 --- !u!114 &79780585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -590,13 +594,14 @@ GameObject:
   m_Component:
   - component: {fileID: 473509115}
   - component: {fileID: 473509116}
+  - component: {fileID: 473509117}
   m_Layer: 0
   m_Name: Ship Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &473509115
 Transform:
   m_ObjectHideFlags: 0
@@ -625,9 +630,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scarsity: 100
-  ships:
-  - {fileID: 919132149155446097, guid: f2a3eca89b0de35398905f8778366327, type: 3}
-  - {fileID: 919132149155446097, guid: 97c57e2e9eb5fc02e99e67f979900d03, type: 3}
+  shipDM: {fileID: 473509117}
+--- !u!114 &473509117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473509114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 238190fe09d715b4d80e2af030b9dfd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shipData:
+    StarShipObj: {fileID: 0}
+    pos: {x: 0, y: 0, z: 0}
+    tagName: 
+    prefabName: 
 --- !u!1 &616870126
 GameObject:
   m_ObjectHideFlags: 0
@@ -1750,7 +1770,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1358106316
 Transform:
   m_ObjectHideFlags: 0
@@ -1777,7 +1797,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 260
+  m_Radius: 400
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1358106318
 MonoBehaviour:
@@ -1791,8 +1811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6db533fe21e133b48b40b99bbc72f097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GOKeepInBounds:
-  - {fileID: 79780579}
+  GOToKeepInBounds: []
   BoundRadius: 260
 --- !u!1 &1487368537 stripped
 GameObject:

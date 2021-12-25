@@ -13,8 +13,8 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Asteroids");
     }
 
-    public int width = 1920;
-    public int height = 1080;
+    public int width = 640;
+    public int height = 480;
     public bool fullscreen = true;
     public TMP_InputField WidthTMP_IF;
     public TMP_InputField HeightTMP_IF;
@@ -30,6 +30,7 @@ public class MainMenu : MonoBehaviour
     }
     public void SwitchFullscreen() {
         fullscreen = !fullscreen;
+        Screen.SetResolution(width, height, fullscreen);
     }
 
     public void SetVolume(float val) {

@@ -20,14 +20,14 @@ public class TestCustomProperties : MonoBehaviour
         if(result.transform.name.Contains("CPU")) {
             var CPU = result.AddComponent<ToyProcessor>();
             string[] subStrings = result.transform.name.Split(',');
-            CPU.memory = System.Text.Encoding.ASCII.GetBytes(subStrings[1]);
+            CPU.Memory = System.Text.Encoding.ASCII.GetBytes(subStrings[1]);
         }
         foreach (Transform child in result.transform)
         {
             if(child.transform.name.Contains("CPU")) {
                 var CPU = child.gameObject.AddComponent<ToyProcessor>();
                 string[] subStrings = child.name.Split(',');
-                CPU.memory = System.Text.Encoding.ASCII.GetBytes(subStrings[1]);
+                CPU.Memory = System.Text.Encoding.ASCII.GetBytes(subStrings[1]);
             }
         }
     }

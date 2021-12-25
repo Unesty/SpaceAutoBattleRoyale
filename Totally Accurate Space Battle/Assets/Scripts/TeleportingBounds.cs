@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TeleportingBounds : MonoBehaviour
 {
-    [SerializeField] GameObject[] GOKeepInBounds;
+    [SerializeField] GameObject[] GOToKeepInBounds;
 
     [SerializeField] float BoundRadius = 250;
 
@@ -17,7 +17,7 @@ public class TeleportingBounds : MonoBehaviour
     void FixedUpdate()
     {
         //must check positions here because they can escape sphere trigger without triggering it
-        foreach(GameObject GO in GOKeepInBounds) {
+        foreach(GameObject GO in GOToKeepInBounds) {
             float _Distance = Vector3.Distance(transform.position, GO.transform.position);
             if(_Distance > BoundRadius) {
                 GO.transform.position = -(GO.transform.position - transform.position)/_Distance*BoundRadius;
