@@ -30,9 +30,11 @@ public class StarShipDataManager : MonoBehaviour
         shipData = new StarShipData(StarShip);
 
         saveFile = Application.persistentDataPath + "/gamedata.json";
+        //AssetDatabase.AddObjectToAsset(StarShip, "Assets/Resources/SavedStarShips/" + StarShip.tag + ".prefab");
 
-        //AssetDatabase.CreateAsset(StarShip, "Assets/Resources/SavedStarShips/" + StarShip.tag + ".prefab");
-        PrefabUtility.SaveAsPrefabAssetAndConnect(StarShip, "Assets/Resources/SavedStarShips/" + StarShip.tag + ".prefab", InteractionMode.UserAction);
+               
+        //Resources.LoadAll("Assets/Resources/SavedStarShips/" + StarShip.tag + ".prefab");
+
         Debug.Log(Application.persistentDataPath);
 
         // Does the file exist?
