@@ -16,6 +16,8 @@ public class StarShipData
     public string prefabName;
 
     //List<GameObject> StarShipParts;
+    public StarShipData() { }
+
 
     // GetStarShip is called when the player clicks Save Model
     public StarShipData(GameObject StarShip)

@@ -31,7 +31,7 @@ public class StarShipDataManager : MonoBehaviour
 
         saveFile = Application.persistentDataPath + "/gamedata.json";
 
-        //AssetDatabase.CreateAsset(StarShip, "Assets/Prefabs/" + StarShip.tag + ".prefab");
+        //AssetDatabase.CreateAsset(StarShip, "Assets/Resources/SavedStarShips/" + StarShip.tag + ".prefab");
         PrefabUtility.SaveAsPrefabAssetAndConnect(StarShip, "Assets/Resources/SavedStarShips/" + StarShip.tag + ".prefab", InteractionMode.UserAction);
         Debug.Log(Application.persistentDataPath);
 
@@ -67,7 +67,7 @@ public class StarShipDataManager : MonoBehaviour
 
     public void LoadFile() {
         //StarShip = GameObject.FindGameObjectWithTag("PlayerStarShip");
-        //shipData = new StarShipData(StarShip);
+        shipData = new StarShipData();
 
         saveFile = Application.persistentDataPath + "/gamedata.json";
         // Read the entire file its contents.
