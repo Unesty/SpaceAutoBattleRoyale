@@ -20,9 +20,11 @@ public class MainMenu : MonoBehaviour
     public TMP_InputField HeightTMP_IF;
 
     public void WidthTexChange(string input) {
+        if(WidthTMP_IF.text != "" || WidthTMP_IF.text != null)
         width = int.Parse(WidthTMP_IF.text);
     }
     public void HeightTexChange(string input) {
+        if(HeightTMP_IF.text != "" || HeightTMP_IF.text != null)
         height = int.Parse(HeightTMP_IF.text);
     }
     public void SetReso() {
@@ -34,7 +36,16 @@ public class MainMenu : MonoBehaviour
     }
 
     public void SetVolume(float val) {
-
-
+        AudioListener.volume = val;
+    }
+    public void Quit() {
+        Application.Quit();
+    }
+    // Create game
+    public TMP_InputField VesselCountTMP_IF;
+    uint vesselCount = 2;
+    public void VesselCountTextChange() {
+        if(VesselCountTMP_IF.text != "" || VesselCountTMP_IF.text != null)
+        vesselCount = uint.Parse(VesselCountTMP_IF.text);
     }
 }
