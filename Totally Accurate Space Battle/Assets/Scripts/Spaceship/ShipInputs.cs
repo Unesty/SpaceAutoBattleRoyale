@@ -17,6 +17,15 @@ public class ShipInputs : MonoBehaviour
 
     void UpdateInputsAuto() {
 // todo: Add Autopilot Here
+// not here, in ToyProcessor.cs or some other emulator
+// here it would be like reading a value from it
+// like
+        // move[0] = (float)CPU.Memory[0] - 128f;
+        // move[1] = (float)CPU.Memory[1] - 128f;
+        // move[2] = (float)CPU.Memory[2] - 128f;
+        // rotate[0] = (float)CPU.Memory[3] - 128f;
+        // rotate[1] = (float)CPU.Memory[4] - 128f;
+        // rotate[2] = (float)CPU.Memory[5] - 128f;
         move = Vector3.zero;
         rotate = Vector3.up;
     }

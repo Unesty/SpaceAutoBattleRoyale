@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ToyAssembler : MonoBehaviour
 {
+    // Maybe just don't use assembler and save raw bytes somewhere
     // Start is called before the first frame update
     void Start()
     {
