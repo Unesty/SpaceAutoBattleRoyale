@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -42,10 +43,46 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
     // Create game
-    public TMP_InputField VesselCountTMP_IF;
-    uint vesselCount = 2;
-    public void VesselCountTextChange() {
-        if(VesselCountTMP_IF.text != "" || VesselCountTMP_IF.text != null)
-        vesselCount = uint.Parse(VesselCountTMP_IF.text);
-    }
+    // Ain't nobody got time for that
+//     public TMP_InputField VesselCountTMP_IF;
+//     int vesselCount = 2;
+//
+//     [SerializeField] GameObject InputFieldPrefab;
+//     [SerializeField] GameObject MPParent;
+//     [SerializeField] int MPDistance = 40;
+//     // stuff to create input fields
+//     [Serializable] public class PathInp {
+//         public string path;
+//         public TMP_InputField TMP_IF;
+//         public GameObject GO;
+//     }
+//     List<PathInp> MP = new List<PathInp>(); // MP is Model Path. Models here are GLTF 3d models of spaceships
+//
+//     public void VesselCountTextChange() {
+//         if(VesselCountTMP_IF.text != "" || VesselCountTMP_IF.text != null) {
+//             vesselCount = (int)uint.Parse(VesselCountTMP_IF.text);
+//         }
+//     }
+//     public void VesselCountTextEnd() {
+//         if(vesselCount == 0) return;
+//         if(MP.Count > vesselCount) {
+//             for(int i = vesselCount; i < MP.Count; ++i) {
+//                 Destroy(MP[i].GO);
+//             }
+//             MP.RemoveRange(vesselCount, MP.Count - vesselCount);
+//         } else {
+//             for(int i = MP.Count; i < vesselCount; ++i) {
+//                 var GO = Instantiate(InputFieldPrefab,  MPParent.transform.position + new Vector3(0, -i*MPDistance, 0),  MPParent.transform.rotation, MPParent.transform);
+//                 GO.GetComponent<TMP_InputField>().OnValueChanged = ModelPathTextChange;
+//                 PathInp toAdd = new PathInp();
+//                 toAdd.TMP_IF = GO.GetComponent<TMP_InputField>();
+//                 toAdd.GO = GO;
+//                 MP.Add(toAdd);
+//             }
+//         }
+//     }
+//     public void ModelPathTextChange(string _id) {
+//         int id = int.Parse(_id);
+//         MP[id].path = MP[id].TMP_IF.text;
+//     }
 }

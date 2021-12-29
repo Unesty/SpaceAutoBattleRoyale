@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TeleportingBounds : MonoBehaviour
 {
-    [SerializeField] GameObject[] GOToKeepInBounds;
+    public List<GameObject> GOToKeepInBounds;
 
     [SerializeField] float BoundRadius = 250;
 
@@ -21,8 +21,10 @@ public class TeleportingBounds : MonoBehaviour
             float _Distance = Vector3.Distance(transform.position, GO.transform.position);
             if(_Distance > BoundRadius) {
                 GO.transform.position = -(GO.transform.position - transform.position)/_Distance*BoundRadius;
+                if(GO.transform.parent != null){
                 if(GO.transform.parent.gameObject.GetComponent<Rigidbody>() != null) {
                     GO.transform.parent.position = -(GO.transform.parent.position - transform.position)/_Distance*BoundRadius;
+                }
                 }
                 print(GO);
                 print(_Distance);

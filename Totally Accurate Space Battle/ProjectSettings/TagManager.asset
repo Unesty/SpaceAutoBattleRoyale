@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerCamera
   - PlayerStarShip
+  - bullet
   layers:
   - Default
   - TransparentFX

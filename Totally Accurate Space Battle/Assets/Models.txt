@@ -1,0 +1,2 @@
+ /bunny/SpaceAutoBattleRoyale/Totally Accurate Space Battle/Assets/Models/SimpleSpaceship.glb
+ /bunny/SpaceAutoBattleRoyale/Totally Accurate Space Battle/Assets/Models/CPU.glb

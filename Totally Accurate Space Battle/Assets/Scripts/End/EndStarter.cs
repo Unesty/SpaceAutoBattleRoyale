@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using TMPro;
 
 public class EndStarter : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class EndStarter : MonoBehaviour
     }
     public List<Spaceship> spaceships = new List<Spaceship>();
     public List<Spaceship> places;
+    [SerializeField] TMP_Text tmptxt;
+
     // Start is called before the first frame update
     void Start() {
         
@@ -46,7 +49,9 @@ public class EndStarter : MonoBehaviour
                 Debug.LogError("There is no survivors, but spaceships.Count is 1");
                 return;
             }
+            places.Insert(0, _Survivors[0]);
             Debug.Log("The winner is: " + places[0].naem + "!");
+            tmptxt.text = "The winner is: " + places[0].naem + "!";
 //         } else {
 //             Debug.LogError("Survivors Count can't be not 1");
 //         }

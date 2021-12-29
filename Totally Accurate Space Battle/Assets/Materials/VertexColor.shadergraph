@@ -1,5 +1,5 @@
 {
-    "m_SGVersion": 2,
+    "m_SGVersion": 3,
     "m_Type": "UnityEditor.ShaderGraph.GraphData",
     "m_ObjectId": "a73d8ecb30844815af65b00e79f18051",
     "m_Properties": [
@@ -14,6 +14,12 @@
         }
     ],
     "m_Keywords": [],
+    "m_Dropdowns": [],
+    "m_CategoryData": [
+        {
+            "m_Id": "2ed5305020514395ac4886dbcfa856e6"
+        }
+    ],
     "m_Nodes": [
         {
             "m_Id": "c0fe0dff92f84371af69e885d2e714c9"
@@ -374,10 +380,11 @@
         "serializedMesh": {
             "m_SerializedMesh": "{\"mesh\":{\"instanceID\":0}}",
             "m_Guid": ""
-        }
+        },
+        "preventRotation": false
     },
     "m_Path": "Shader Graphs",
-    "m_ConcretePrecision": 0,
+    "m_GraphPrecision": 0,
     "m_PreviewMode": 2,
     "m_OutputNode": {
         "m_Id": ""
@@ -444,17 +451,23 @@
 }
 
 {
-    "m_SGVersion": 0,
+    "m_SGVersion": 1,
     "m_Type": "UnityEditor.Rendering.Universal.ShaderGraph.UniversalTarget",
     "m_ObjectId": "0353100fac02450c845b7fcb7a848245",
     "m_ActiveSubTarget": {
         "m_Id": "d2f20f7b20504309846aeb0cae7bb1b9"
     },
+    "m_AllowMaterialOverride": false,
     "m_SurfaceType": 0,
+    "m_ZTestMode": 4,
+    "m_ZWriteControl": 0,
     "m_AlphaMode": 0,
-    "m_TwoSided": false,
+    "m_RenderFace": 0,
     "m_AlphaClip": false,
-    "m_CustomEditorGUI": ""
+    "m_CastShadows": true,
+    "m_ReceiveShadows": true,
+    "m_CustomEditorGUI": "",
+    "m_SupportVFX": false
 }
 
 {
@@ -855,6 +868,24 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.CategoryData",
+    "m_ObjectId": "2ed5305020514395ac4886dbcfa856e6",
+    "m_Name": "",
+    "m_ChildObjectList": [
+        {
+            "m_Id": "c0301403fb5c4e6ea71c1ef78178a9d3"
+        },
+        {
+            "m_Id": "b94101dd88e84bbba1ea4b15008c3ae7"
+        },
+        {
+            "m_Id": "4fe184e32ca243a684aa0e5f2b0bd6fc"
+        }
+    ]
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicValueMaterialSlot",
     "m_ObjectId": "30c65d2540974e8881e09c82f850d43f",
     "m_Id": 0,
@@ -1038,9 +1069,13 @@
         "m_GuidSerialized": "3b02e9df-7cd6-4255-a44b-ad12496030f3"
     },
     "m_Name": "Brightness",
+    "m_DefaultRefNameVersion": 0,
+    "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Vector1_4fe184e32ca243a684aa0e5f2b0bd6fc",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
@@ -1825,9 +1860,13 @@
         "m_GuidSerialized": "ee728c12-ed8f-4f27-8eb5-ef36a86f3803"
     },
     "m_Name": "Smoothness",
+    "m_DefaultRefNameVersion": 0,
+    "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Vector1_b94101dd88e84bbba1ea4b15008c3ae7",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
@@ -1863,9 +1902,13 @@
         "m_GuidSerialized": "72e4aec7-7543-41c1-8340-d1991c1da5a6"
     },
     "m_Name": "Metallic",
+    "m_DefaultRefNameVersion": 0,
+    "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Vector1_c0301403fb5c4e6ea71c1ef78178a9d3",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
