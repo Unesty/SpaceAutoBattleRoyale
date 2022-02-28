@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class movetoplayer : MonoBehaviour
 {
-    public radartofind rtf;
+  
     public bool stopmoving = false;
     public float movespeed;
+    public radartofind rtf;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,9 +18,10 @@ public class movetoplayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+      
         if (!stopmoving)
         {
-            transform.parent.parent.position = Vector3.MoveTowards(transform.position, rtf.focus.transform.position, movespeed);
+            gameObject.transform.parent.parent.position = Vector3.MoveTowards(transform.position, rtf.focus.transform.position, movespeed);
         }
     }
 
